@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { observer, inject } from 'mobx-react';
 
+
+// 引入所要使用的store文件
+@inject('countStore')
+@observer
 class App extends Component {
+
 
     constructor(props) {
         super(props);
     }
 
-    add = ()=>{
-        console.log(111)
-    }
-
 
     render() {
-        const a = 0;
+
+        // const {count} = this.props.countStore;
+        // console.log(count);
 
         return (
             <div classname="App">
