@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action,computed } from 'mobx';
 
 class CountStore {
     // 定义变量count
@@ -11,6 +11,12 @@ class CountStore {
     @action resetCount = () => {
         this.count = 0;
     }
+
+    @computed get  text (){
+        return `我现在是${this.count}`
+    }
+
+ 
 
 }
 

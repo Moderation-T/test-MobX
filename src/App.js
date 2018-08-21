@@ -7,21 +7,15 @@ import { observer, inject } from 'mobx-react';
 @inject('countStore')
 @observer
 class App extends Component {
-
-
-    constructor(props) {
-        super(props);
-    }
-
-
+  
     render() {
-
-        // const {count} = this.props.countStore;
-        // console.log(count);
-
+        const {count,addCount,resetCount,text} = this.props.countStore;
         return (
             <div classname="App">
-                111
+                {count}
+                <button onClick={addCount}>点我加1</button>
+                <button onClick={resetCount}>点我清零</button>
+                <p>{text}</p>
             </div>
         );
     }
