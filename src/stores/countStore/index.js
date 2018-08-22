@@ -1,4 +1,4 @@
-import { observable, action,computed } from 'mobx';
+import { observable, action,computed ,autorun} from 'mobx';
 
 class CountStore {
     // 定义变量count
@@ -15,9 +15,14 @@ class CountStore {
     @computed get  text (){
         return `我现在是${this.count}`
     }
+    constructor() {
+        // 运行一次建立连接
+        autorun( () => {
+            console.log('number:' + this.count)
+        })
+    }
 
- 
-
+    
 }
 
 const countStore = new CountStore();
