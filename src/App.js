@@ -7,7 +7,6 @@ import { observer, inject } from 'mobx-react';
 // 引入所要使用的store文件
 // @inject('countStore')
 @inject('stateTreeStore')
-// @inject('tree')
 @observer
 class App extends Component {
 
